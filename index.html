@@ -1,35 +1,96 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="CONTENT- TYPE" content="text/html;char">
-        <title> Mi proyecto web </title>
-    </head>
-    <body>
-        <h1>
-            ejercicios de diseño web
-        </h1>
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea JavaScript Completa</title>
+    <style>
+        //Estilos CSS 
+        #miDiv {
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
 
-        <ul>
-            <li>
-                <a href="tarea.index.html">declaracion de variables</a>
-                </li>
-                <li>
-                  <a href="tarea2sjs.html">tarea2</a>  
-                </li>
-                <li>
-                    <a href="tareas2sjs.HTML">tarea2</a>
-                </li>
-                <li>
-                <a href="pruebajs.html"> prueba</a>
+        #miDiv.resaltado {
+            background-color: #ff3bd5;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transform: scale(1.02);
+        }
 
-                </li>
-                <li>
-                    <a href="index.html"> tarea3</a>
-                </li>
-                
+        #miBoton {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
 
-            </li>
-               
-        </ul>
-    </body>
+        #miBoton:hover {
+            background-color: #45a049;
+        }
+
+        #miLista {
+            margin-top: 20px;
+            list-style-type: square;
+            padding-left: 30px;
+        }
+
+        #miLista li {
+            margin-bottom: 8px;
+            padding: 5px;
+            background-color: #e9f7ef;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div id="miDiv">
+        <p id="miParrafo">Texto original que cambiará al hacer clic en el botón.</p>
+        <button id="miBoton">Haz clic para cambiar el texto</button>
+    </div>
+
+    <ul id="miLista">
+    </ul>
+
+    <script>
+        
+        // 1. Cambiar texto del párrafo al hacer clic
+        document.getElementById('miBoton').addEventListener('click', function() {
+            document.getElementById('miParrafo').textContent = 
+                "¡El texto ha sido modificado exitosamente con JavaScript!";
+        });
+
+        // 2. Añadir clase 
+        const div = document.getElementById('miDiv');
+        div.addEventListener('mouseenter', function() {
+            this.classList.add('resaltado');
+        });
+        div.addEventListener('mouseleave', function() {
+            this.classList.remove('resaltado');
+        });
+
+        // 3. Añadir elementos a la lista al cargar la página
+        window.onload = function() {
+            const elementos = [
+                " elemento añadido dinámicamente",
+                "elemento creado con JS",
+                " lista"
+            ];
+
+            const lista = document.getElementById('miLista');
+            
+            elementos.forEach(function(texto) {
+                const li = document.createElement('li');
+                li.textContent = texto;
+                lista.appendChild(li);
+            });
+        };
+    </script>
+</body>
 </html>
