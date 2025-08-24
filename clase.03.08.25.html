@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fundamentos.SJS</title>
+</head>
+<body>
+    <script>
+        
+        let hora = 20;// prueba con difdrentes horas, ej.9,14,20
+        if (hora < 12){
+            console.log("buenos dias");
+
+            } else if (hora < 18) {
+            console.log("buenas tardes");    
+            } else  {
+            console.log("buenas noches");
+    }
+
+    for (let i = 0; i < 6; i++){
+    console.log("Interacion" + i);
+   }
+
+    let contador = 0;
+    while (contador < 10){
+    console.log("contando de 0 a 9:" + contador);
+    contador++;
+  }
+  // declaracion de funcion
+  function aludad(nombre){
+    return "Hola, " + nombre + nombre + "!";
+  }
+  console.log(saludar("Pedro"));//llama a la funcion 
+
+ console.log(saludar("Maria"));//llama ala funcion 
+
+</script>
+</body>
+</html>
