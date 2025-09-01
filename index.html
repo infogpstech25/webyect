@@ -60,13 +60,13 @@
 
     <script>
         
-        // 1. Cambiar texto del párrafo al hacer clic
+        
         document.getElementById('miBoton').addEventListener('click', function() {
             document.getElementById('miParrafo').textContent = 
                 "¡El texto ha sido modificado exitosamente con JavaScript!";
         });
 
-        // 2. Añadir clase 
+    
         const div = document.getElementById('miDiv');
         div.addEventListener('mouseenter', function() {
             this.classList.add('resaltado');
@@ -75,7 +75,7 @@
             this.classList.remove('resaltado');
         });
 
-        // 3. Añadir elementos a la lista al cargar la página
+    
         window.onload = function() {
             const elementos = [
                 " elemento añadido dinámicamente",
